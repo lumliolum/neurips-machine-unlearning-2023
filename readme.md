@@ -45,9 +45,9 @@ This is based on the paper [certified-removal-from-machine-learning-models](http
 
 For logistic regression, or models where the loss function is convex with respect to weights, authors proposed the following newton step update
 
-$$ w = w + H_{r}^{-1} g_{f} $$
+$$ w = w + H_{r}^{-1} \nabla_{f} $$
 
-where $H$ is hessian of loss function calculated on retain dataset, $g_{f}$ is gradient of loss function on forget dataset. We calculate these values using the trained model given.
+where $H$ is hessian of loss function calculated on retain dataset, $\nabla_{f}$ is gradient of loss function on forget dataset. We calculate these values using the trained model given.
 
 Given that we have neural network and loss function is not convex, what I did only updated the weights in the last layer which is usually called as fc (fully connected) layer. For all other layer weights, I have added gaussian noise of standard deviation `1e-3` and then did the feature extraction (output of last second layer) on both retain and forget set. Using these values, I have calculated hessian, gradient on respective sets and updated the weights based on above equation.
 
