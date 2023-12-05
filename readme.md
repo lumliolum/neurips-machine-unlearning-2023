@@ -45,7 +45,7 @@ This is based on the paper [certified-removal-from-machine-learning-models](http
 
 For logistic regression, or models where the loss function is convex with respect to weights, authors proposed the following newton step update
 
-$$ w = w + H^{-1}_{r}g_{f} $$
+$$ w = w + H^{-1}_{r} g_{f} $$
 
 where $H$ is hessian of loss function calculated on retain dataset, $g_{f}$ is gradient of loss function on forget dataset. We calculate these values using the trained model given.
 
