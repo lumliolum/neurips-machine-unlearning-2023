@@ -26,7 +26,7 @@ This approach is based on the paper : [selective-forgetting-in-deep-networks](ht
 
 The idea is that each weight is updated by adding gaussian noise. The final weights will look like this
 
-$$S(w) = w + N(0, \sigma^{2})$$
+$$ S(w) = w + N(0, \sigma^{2}) $$
 
 According to the paper, the variance is 
 
@@ -45,7 +45,7 @@ This is based on the paper [certified-removal-from-machine-learning-models](http
 
 For logistic regression, or models where the loss function is convex with respect to weights, authors proposed the following newton step update
 
-$$w = w + H^{-1}_{r}\nabla_{f}$$
+$$ w = w + H^{-1}_{r}\nabla_{f} $$
 
 where $H$ is hessian of loss function calculated on retain dataset, $\nabla_{f}$ is gradient of loss function on forget dataset. We calculate these values using the trained model given.
 
